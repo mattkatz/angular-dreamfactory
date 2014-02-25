@@ -6,5 +6,10 @@ The AngularJS DreamFactory module seamlessy integrates the DreamFactory Services
 
 
 The angular-dreamfactory module can be installed by either:
-*Cloning or downloading this repo and copying to your project
-*using Bower
+
+* Cloning or downloading this repo and copying to your project
+* using Bower
+
+
+
+## Cloning the repo
