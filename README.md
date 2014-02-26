@@ -50,8 +50,8 @@ The first parameters for the constants have to be called exactly 'DSP_URL' and '
 
 ```javascript
 angular.module9'MyApp', ['ngDreamFactory'])
-.constant('DSP_URL', _YOUR_DSP_URL_HERE_)
-.constant('DSP_API_KEY', _YOUR_DSP_API_KEY_HERE_)
+  .constant('DSP_URL', _YOUR_DSP_URL_HERE_)
+  .constant('DSP_API_KEY', _YOUR_DSP_API_KEY_HERE_)
 // Rest of your app
 ```
 
