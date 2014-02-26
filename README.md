@@ -171,6 +171,7 @@ Using DreamFactory with promises works the same as using promises with $http.  T
 }]);
 ```
 
+That's all there is to it!
 
 
 
