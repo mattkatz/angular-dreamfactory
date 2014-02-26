@@ -29,7 +29,7 @@ After the install finishes you are ready to go.
 Now that you've installed the module we'll need to include it in th app.  If you have used bower the script should already have been included at the bottom of you index.html file.  If you have not used bower or the script was not included for some reason simply add the following line to where ever you are including your scripts for angular.
 
 ```
-<script src="_PATH_TO_ANGULAR_DREAMFACTORY_\angular-dreamfactory.js"></script>
+<script src="_PATH_TO_ANGULAR_DREAMFACTORY_/angular-dreamfactory.js"></script>
 ```
 
 Now inject angular-dreamfactory into your app (usually in the app.js file).
