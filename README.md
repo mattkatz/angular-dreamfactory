@@ -129,7 +129,7 @@ Using DreamFactory with promises works the same as using promises with $http.  T
 }])
 
 //Define a custom service
-.service('MyService', ['$', 'DreamFactory', function($q, DreamFactory) {
+.service('MyService', ['$q', 'DreamFactory', function($q, DreamFactory) {
   
   return {
     
