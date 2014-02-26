@@ -39,7 +39,7 @@ angular.module('MyApp',['ngDreamFactory'])
 // The rest of your app
 ```
 
-The angular-dreamfactory module requires two parameters that we suggest you store as constants in your app definition.  They are your DSP url and your DSP api key.  They should be set like so:
+The angular-dreamfactory module requires two parameters that we suggest you store as constants in your app definition.  They are your DSP url and your DSP api key(provided by your DSP).  They should be set like so:
 
 ```javascript
 .constant('DSP_URL', _YOUR_DSP_URL_HERE_)
@@ -49,7 +49,7 @@ The angular-dreamfactory module requires two parameters that we suggest you stor
 The first parameters for the constants have to be called exactly 'DSP_URL' and 'DSP_API_KEY' as the angular-dreamfactory module is looking for these to be injected. All together your app definition should resemble the code below:
 
 ```javascript
-angular.module9'MyApp', ['ngDreamFactory'])
+angular.module('MyApp', ['ngDreamFactory'])
   .constant('DSP_URL', _YOUR_DSP_URL_HERE_)
   .constant('DSP_API_KEY', _YOUR_DSP_API_KEY_HERE_)
 // Rest of your app
