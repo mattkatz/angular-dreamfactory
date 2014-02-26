@@ -55,6 +55,121 @@ angular.module9'MyApp', ['ngDreamFactory'])
 // Rest of your app
 ```
 
+## Injecting and Using angular-dreamfactory
+
+Inject the 'DreamFactory' service from the angular-dreamfactory module as you would any service.  Calls to the DreamFactory SDK are made by calling the api object in the DreamFactory service followed by the service name and method you wish to call.  For example:
+```javascript
+
+DreamFactory.api._SERVICE_NAME_HERE_._SERVICE_METHOD_HERE_();
+
+```
+
+You can find a list of the services and methods available to you under the API/SDK tab in your DSP Admin Console. All the methods adhere to an ajax like structure with data as the first parameter followed by success and error methods.  Because angular-dreamfactory is built upon $http there is no need to use $apply.  Angular is aware of the SDK call.
+
+
+Here's an example of injecting the DreamFactory service into a controller and executing the login function.
+
+```javascript
+
+.controller('MyCtrl', ['DreamFactory', function(DreamFactory) {
+  
+  
+  // model for login credentials
+  $scope.creds = {
+    email: '',
+    password: ''
+  }
+  
+  // Login function
+  $scope.loginFunc = function() {
+  
+    // Call to the DreamFactory user service using provided login method
+    DreamFactory.api.user.login($scope.creds,
+    
+      // Success function
+      function(data) {
+        
+        // Handle login success
+      },
+      
+      // Error function
+      function(error) {
+      
+        // Handle Login failure
+      }
+  }
+}];
+```
+
+
+Using DreamFactory with promises works the same as using promises with $http.  This time we'll demonstrate an AngularJS service built using the DreamFactory service to request a record set from a database and return that with a promise.
+
+```javascript
+
+
+.controller('MyCtrl', ['MyService', function(MyService) {
+
+
+  // Function to call custom service
+  $scope.getRecords = function() {
+  
+     // call custom service built using DreamFactory that returns a promise
+     MyService.getRecord('_YOUR_TABLE_NAME_').then(
+     
+     // Success function
+      function(result) {
+     
+      // Do something with the record set
+     },
+     
+     // Error function
+     function(reject) {
+     
+      // Handle error
+     });
+  }
+}])
+.service('MyService', ['$', 'DreamFactory', function($q, DreamFactory) {
+  
+  return {
+    
+    // Define custom getRecords service  
+    getRecords: function(tableNameStr) {
+    
+      // create a promise
+      var deferred = $q.defer(),
+          
+          // Create request obj
+          request = {
+            body: {
+              table_name: tableNameStr
+            }
+          }
+      
+      // Call DreamFactory database service with request obj
+      DreamFactory.api.db.getRecords(request,
+      
+        // Success function
+        function(data) {
+          
+          // Handle promise
+          deferred.resolve(data);
+        },
+        
+        // Error function
+        function(error) {
+        
+          // Handle Promise
+          deferred.reject(error);
+        }
+      );
+    }
+    
+    // Return promise
+    return deferred.promise;
+  }
+}]);
+
 
 
 
