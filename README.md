@@ -58,10 +58,9 @@ angular.module9'MyApp', ['ngDreamFactory'])
 ## Injecting and Using angular-dreamfactory
 
 Inject the 'DreamFactory' service from the angular-dreamfactory module as you would any service.  Calls to the DreamFactory SDK are made by calling the api object in the DreamFactory service followed by the service name and method you wish to call.  For example:
+
 ```javascript
-
 DreamFactory.api._SERVICE_NAME_HERE_._SERVICE_METHOD_HERE_();
-
 ```
 
 You can find a list of the services and methods available to you under the API/SDK tab in your DSP Admin Console. All the methods adhere to an ajax like structure with data as the first parameter followed by success and error methods.  Because angular-dreamfactory is built upon $http there is no need to use $apply.  Angular is aware of the SDK call.
@@ -70,7 +69,7 @@ You can find a list of the services and methods available to you under the API/S
 Here's an example of injecting the DreamFactory service into a controller and executing the login function.
 
 ```javascript
-
+// Define a Controller
 .controller('MyCtrl', ['DreamFactory', function(DreamFactory) {
   
   
@@ -105,8 +104,7 @@ Here's an example of injecting the DreamFactory service into a controller and ex
 Using DreamFactory with promises works the same as using promises with $http.  This time we'll demonstrate an AngularJS service built using the DreamFactory service to request a record set from a database and return that with a promise.
 
 ```javascript
-
-
+// Define a Controller
 .controller('MyCtrl', ['MyService', function(MyService) {
 
 
@@ -129,6 +127,8 @@ Using DreamFactory with promises works the same as using promises with $http.  T
      });
   }
 }])
+
+//Define a custom service
 .service('MyService', ['$', 'DreamFactory', function($q, DreamFactory) {
   
   return {
@@ -169,7 +169,7 @@ Using DreamFactory with promises works the same as using promises with $http.  T
     return deferred.promise;
   }
 }]);
-
+```
 
 
 
