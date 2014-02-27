@@ -137,14 +137,12 @@ Using DreamFactory with promises works the same as using promises with $http.  T
     getRecords: function(tableNameStr) {
     
       // create a promise
-      var deferred = $q.defer(),
+      var deferred = $q.defer();
           
-          // Create request obj
-          request = {
-            body: {
-              table_name: tableNameStr
-            }
-          }
+      // Create request obj
+      var request = {
+            table_name: tableNameStr
+          };
       
       // Call DreamFactory database service with request obj
       DreamFactory.api.db.getRecords(request,
