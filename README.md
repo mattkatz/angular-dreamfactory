@@ -2,7 +2,7 @@ angular-dreamfactory
 ====================
 
 
-The AngularJS DreamFactory module seamlessy integrates the DreamFactory Services Platform(DSP) with an AngularJS application.  Because it is dynamically generated when the application loads your methods and services will always be in sync with your DSP.  For more information about DreamFactory or the DreamFactory Services Platform please visit the [DreamFactory website](https://www.dreamfactory.com).
+The AngularJS DreamFactory module seamlessy integrates the DreamFactory Services Platform (DSP) SDK with an AngularJS application.  Because it is dynamically generated when the application loads your methods and services will always be in sync with your DSP.  For more information about DreamFactory or the DreamFactory Services Platform please visit the [DreamFactory website](https://www.dreamfactory.com).
 
 
 The angular-dreamfactory module can be installed by either:
@@ -26,7 +26,7 @@ After the install finishes you are ready to go.
 
 ## Including the angular-dreamfactory module
 
-Now that you've installed the module we'll need to include it in th app.  If you have used bower the script should already have been included at the bottom of you index.html file.  If you have not used bower or the script was not included for some reason simply add the following line to where ever you are including your scripts for angular.
+Now that you've installed the module we'll need to include it in the app.  If you have used bower the script should already have been included at the bottom of your index.html file.  If you have not used bower or the script was not included for some reason simply add the following line to wherever you are including your scripts for angular.
 
 ```
 <script src="_PATH_TO_ANGULAR_DREAMFACTORY_/angular-dreamfactory.js"></script>
@@ -39,7 +39,7 @@ angular.module('MyApp',['ngDreamFactory'])
 // The rest of your app
 ```
 
-The angular-dreamfactory module requires two parameters that we suggest you store as constants in your app definition.  They are your DSP url and your DSP api key(provided by your DSP).  They should be set like so:
+The angular-dreamfactory module requires two parameters that we suggest you store as constants in your app definition.  They are your DSP url and your DSP api key (provided by your DSP).  They should be set like so:
 
 ```javascript
 .constant('DSP_URL', _YOUR_DSP_URL_HERE_)
@@ -112,7 +112,7 @@ Using DreamFactory with promises works the same as using promises with $http.  T
   $scope.getRecords = function() {
   
      // call custom service built using DreamFactory that returns a promise
-     MyService.getRecord('_YOUR_TABLE_NAME_').then(
+     MyService.getRecords('_YOUR_TABLE_NAME_').then(
      
      // Success function
       function(result) {
