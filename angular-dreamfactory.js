@@ -2,8 +2,8 @@
 
 
 angular.module('ngDreamFactory', [])
-    .service('DreamFactory', ['DSP_URL', 'DSP_API_KEY', '$http', '$q', '$rootScope',
-        function (DSP_URL, DSP_API_KEY, $http, $q, $rootScope) {
+    .service('DreamFactory', ['DSP_URL', 'DSP_API_KEY', '$http', '$rootScope',
+        function (DSP_URL, DSP_API_KEY, $http, $rootScope) {
 
             var swaggerInstance = null,
                 ApiKeyAuthorization,
